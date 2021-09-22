@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		.cuadro1{
+			position: absolute;
+		    top: 50px;
+            left: 550px;
+			height: 100px;
+			width: 300px;
+			background: red;
+			color: white;
+			font-size: 20px;
+
+		}		
+		.cuadro2{
+			position: absolute;
+		    top: 200px;
+            left: 420px;
+			height: 0px;
+			width: 600px;
+			background: red;
+			color: white;
+			font-size: 20px;
+
+		}
+		.logo{
+			position: absolute;
+		    top: 100px;
+            left: 210px;
+			height: 0px;
+			width: 200px;
+
+		}
+		.ocultar{
+			position: absolute;
+		    top: 50px;
+            left: 900px;
+			height: 100px;
+			width: 100px;
+			background: red;
+			color: white;
+			font-size: 20px;
+		}
+		.cuadro3{
+			position: absolute;
+		    top: 200px;
+            left: 600px;
+			height: 0px;
+			width: 400px;
+			background: red;
+			color: white;
+			font-size: 20px;
+
+		}
+				.cuadro31{
+			position: absolute;
+		    top: 200px;
+            left: 600px;
+			height: 0px;
+			width: 400px;
+			background: blue;
+			color: white;
+			font-size: 20px;
+
+		}
+		.cuadro4{
+		    position: absolute;
+		    top: 200px;
+            left: 300px;
+			height: 0px;
+			width: 100px;
+			background: red;
+			color: white;
+			font-size: 20px;
+		}
+				.cuadro5{
+		    position: absolute;
+		    top: 400px;
+            left: 300px;
+			height: 0px;
+			width: 100px;
+			background: red;
+			color: white;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+
+
+	<div class="cuadro1" id="c1" onclick="inicio()"><center>Neosistemas</center></div>
+
+	<div class="cuadro2" id="c2"> <div> <img src="neosistemas.png" class="logo" id="log"></div> </div>
+
+	<div class="ocultar" onclick="ocultar()"><center>Ocultar</center></div>
+
+	<div class="cuadro3" id="c3" onmousemove="posi(event)"></div>
+
+	<div class="cuadro4" id="c4" onclick="eje1()">eje1</div>
+
+	<div class="cuadro5" id="c5" onclick="eje2()">eje2</div>
+
+	<div class="cuadro31" id="c31" onmousemove="posi2(event)"></div>
+
+
+     <script>
+     	                 x=0;
+     	                 y=0;
+     	function inicio() {
+     		c2.style.height=400 +"px";
+     		log.style.height=200 +"px";
+     		     			function mostrar() {
+     				log.style.height=0 +"px";
+     			}
+     			setTimeout(mostrar,1000)
+     			  
+     			}
+
+     			function ocultar() {
+     				c2.style.height=0 +"px";
+     				c4.style.height=100 +"px";
+     				c5.style.height=100 +"px";
+     			}
+
+                 function eje1() {
+                 	c3.style.height=400 +"px";
+                 }
+
+                 function eje2() {
+                 	c31.style.height=400 +"px";
+                 }
+
+
+
+     			function posi(event) {
+     				x=event.clientX;
+     				y=event.clientY;
+     				c3.innerHTML= "Estoy adenntro"+ x+"  "+y;
+     			}
+
+     	
+    	z=0;
+    function zeta(){
+    	z=z+1;
+
+    	if (z%2==0){
+    		c31.style.background="red";
+    	}else{
+    			c31.style.background="green";
+    	}
+    	     
+    	if (z==100){
+    		clearInterval(crono);
+
+    	}
+
+
+    }
+
+    //setTimeout(mostrar,10000);
+    crono=setInterval(zeta,1000);
+
+        	     			function posi2(event) {
+     				x=event.clientX;
+     				y=event.clientY;
+     				c31.innerHTML= x+"  "+y;
+     			}
+     		
+
+     	    
+     </script>
+
+
+</body>
+</html>
